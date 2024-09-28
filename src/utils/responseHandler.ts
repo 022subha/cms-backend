@@ -11,3 +11,5 @@ class ResponseHandler {
     this.success = statusCode < 400;
   }
 }
+
+export { ResponseHandler };
