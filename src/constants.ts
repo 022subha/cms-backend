@@ -64,3 +64,8 @@ export enum HTTP_STATUS {
   NOT_EXTENDED = 510,
   NETWORK_AUTHENTICATION_REQUIRED = 511,
 }
+
+export enum ROLES {
+  USER = "user",
+  ADMIN = "admin",
+}
