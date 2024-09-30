@@ -1,5 +1,6 @@
 import { Request, Response, NextFunction } from "express";
 import { ErrorHandler } from "../utils/errorHandler";
+import { HTTP_STATUS } from "../constants";
 
 export const errorMiddleware = (
   err: ErrorHandler,
@@ -7,7 +8,11 @@ export const errorMiddleware = (
   res: Response,
   _next: NextFunction
 ) => {
-  const { statusCode = 500, message = "Internal Server Error", success } = err;
+  const {
+    statusCode = HTTP_STATUS.INTERNAL_SERVER_ERROR,
+    message = "Internal Server Error",
+    success,
+  } = err;
 
   console.error(
     "\n<================ Somwething Went Wrong ================>\n",
