@@ -1,7 +1,7 @@
 import express, { Request, Response, NextFunction } from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
-import { errorMiddleware } from "./controllers/error";
+import { errorMiddleware } from "./middlewares/error";
 import morgan from "morgan";
 import { ErrorHandler } from "./utils/errorHandler";
 import fileUpload from "express-fileupload";
