@@ -11,10 +11,7 @@ interface IContent extends Document {
   };
   parentID: mongoose.Schema.Types.ObjectId;
   children: mongoose.Schema.Types.ObjectId[];
-  videoURL: {
-    public_id: string;
-    url: string;
-  };
+  video: mongoose.Schema.Types.ObjectId;
   duration: number;
   notes: mongoose.Schema.Types.ObjectId[];
   comments: mongoose.Schema.Types.ObjectId[];
@@ -60,15 +57,9 @@ const contentSchema = new Schema<IContent>(
         ref: "Content",
       },
     ],
-    videoURL: {
-      public_id: {
-        type: String,
-        required: [true, "Public ID is required!"],
-      },
-      url: {
-        type: String,
-        required: [true, "URL is required!"],
-      },
+    video: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Video",
     },
     duration: {
       type: Number,
