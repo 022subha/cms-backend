@@ -1,3 +1,5 @@
+import exp from "constants";
+
 export const DB_NAME = "EdiaryDB";
 
 export enum HTTP_STATUS {
@@ -68,4 +70,10 @@ export enum HTTP_STATUS {
 export enum ROLES {
   USER = "user",
   ADMIN = "admin",
+}
+
+export enum COURSE_LEVEL {
+  BEGINNER = "beginner",
+  INTERMEDIATE = "intermediate",
+  ADVANCED = "advanced",
 }
