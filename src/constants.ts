@@ -77,3 +77,8 @@ export enum COURSE_LEVEL {
   INTERMEDIATE = "intermediate",
   ADVANCED = "advanced",
 }
+
+export enum CONTENT_TYPE {
+  VIDEO = "video",
+  FOLDER = "folder",
+}
