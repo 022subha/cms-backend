@@ -48,7 +48,7 @@ const courseSchema = new Schema<ICourse>(
     },
     duration: {
       type: Number,
-      required: true,
+      required: [true, "Duration is required!"],
     },
     level: {
       type: String,
@@ -57,44 +57,44 @@ const courseSchema = new Schema<ICourse>(
         COURSE_LEVEL.INTERMEDIATE,
         COURSE_LEVEL.ADVANCED,
       ],
-      required: true,
+      required: [true, "Level is required!"],
     },
     category: {
       type: mongoose.Schema.Types.ObjectId,
-      required: true,
+      required: [true, "Category is required!"],
       ref: "Category",
     },
     tags: {
       type: [String],
-      required: true,
+      required: [true, "Tags are required!"],
     },
     prerequisites: {
       type: [String],
-      required: true,
+      required: [true, "Prerequisites are required!"],
     },
     thumbnail: {
       public_id: {
         type: String,
-        required: true,
+        required: [true, "Thumbnail public_id is required!"],
       },
       url: {
         type: String,
-        required: true,
+        required: [true, "Thumbnail url is required!"],
       },
     },
     demoVideo: {
       public_id: {
         type: String,
-        required: true,
+        required: [true, "Demo video public_id is required!"],
       },
       url: {
         type: String,
-        required: true,
+        required: [true, "Demo video url is required!"],
       },
     },
     price: {
       type: Number,
-      required: true,
+      required: [true, "Price is required!"],
     },
     ratingAndReviews: [
       {
