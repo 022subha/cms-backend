@@ -57,7 +57,7 @@ const userSchema = new Schema<IUser>(
     },
     password: {
       type: String,
-      minlength: [6, "Password need to be at least 6 characters long!"],
+      minlength: [8, "Password need to be at least 8 characters long!"],
       select: false,
       validate: {
         validator: function (password: string) {
