@@ -16,11 +16,11 @@ interface IContent extends Document {
     url: string;
   };
   duration: number;
-  notes?: string;
-  isPublished: Boolean;
+  notes: mongoose.Schema.Types.ObjectId[];
   comments: mongoose.Schema.Types.ObjectId[];
   questions: mongoose.Schema.Types.ObjectId[];
   answers: mongoose.Schema.Types.ObjectId[];
+  isPublished: Boolean;
   createdAt: Date;
   updatedAt: Date;
 }
@@ -74,9 +74,12 @@ const contentSchema = new Schema<IContent>(
       type: Number,
       required: [true, "Duration is required!"],
     },
-    notes: {
-      type: String,
-    },
+    notes: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Note",
+      },
+    ],
     comments: [
       {
         type: mongoose.Schema.Types.ObjectId,
