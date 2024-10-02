@@ -105,7 +105,7 @@ const courseSchema = new Schema<ICourse>(
     courseContent: [
       {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "CourseContent",
+        ref: "Content",
       },
     ],
     studentsEnrolled: [
