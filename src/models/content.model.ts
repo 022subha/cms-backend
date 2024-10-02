@@ -15,6 +15,7 @@ interface IContent extends Document {
   duration: number;
   notes: mongoose.Schema.Types.ObjectId[];
   comments: mongoose.Schema.Types.ObjectId[];
+  reply: mongoose.Schema.Types.ObjectId[];
   questions: mongoose.Schema.Types.ObjectId[];
   answers: mongoose.Schema.Types.ObjectId[];
   isPublished: Boolean;
@@ -75,6 +76,12 @@ const contentSchema = new Schema<IContent>(
       {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Comment",
+      },
+    ],
+    reply: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Reply",
       },
     ],
     questions: [
