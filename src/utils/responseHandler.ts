@@ -5,10 +5,10 @@ class ResponseHandler {
   success: boolean;
 
   constructor(statusCode: number, data: any, message = "Success") {
-    this.data = data;
-    this.message = message;
     this.statusCode = statusCode;
     this.success = statusCode < 400;
+    this.message = message;
+    this.data = data;
   }
 }
 

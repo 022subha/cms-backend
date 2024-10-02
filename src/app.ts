@@ -25,8 +25,11 @@ app.use(
     tempFileDir: "/tmp",
   })
 );
-
 app.use(morgan("dev"));
+
+import authRoutes from "./routes/auth.route";
+
+app.use("/api/auth", authRoutes);
 
 app.get("/", (_req: Request, res: Response) => {
   res.json({
